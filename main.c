@@ -14,12 +14,12 @@
 
 int main(void) {
 
-    void configurePBClock();
-	void configurePins();
-	void spi_init();
+    configurePBClock();
+	configurePins();
+	spi_init();
 	display_init();
-	//void enable_timer2();
-	//void enableGlobalInterrupts();
+	void enable_timer2();
+	void enableGlobalInterrupts();
 	
 	
 	display_string(0, "apa");
