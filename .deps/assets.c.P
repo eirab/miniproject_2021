@@ -1,13 +1,13 @@
-ground.c.o: ground.c /opt/mcb32tools/include/stdint.h \
+assets.c.o: assets.c /opt/mcb32tools/include/stdint.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h \
- ground.h /opt/mcb32tools/include/stdlib.h \
+ pic32mx.h assets.h /opt/mcb32tools/include/stdlib.h \
  /opt/mcb32tools/include/klibc/extern.h \
  /opt/mcb32tools/include/klibc/inline.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h
-ground.c /opt/mcb32tools/include/stdint.h :
+assets.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h :
- ground.h /opt/mcb32tools/include/stdlib.h :
+ pic32mx.h assets.h /opt/mcb32tools/include/stdlib.h :
  /opt/mcb32tools/include/klibc/extern.h :
  /opt/mcb32tools/include/klibc/inline.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h :
