@@ -60,7 +60,7 @@ void update_frame(int x, int y){
 
 */
 
-void spi_init(){
+void spi_init(void){
 /* Set up SPI as master */
 	SPI2CON = 0;
 	SPI2BRG = 4;
