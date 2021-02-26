@@ -35,5 +35,6 @@ void labwork( void ) {
   
 
   display_update();
+  display_string(0, "apa");
   
 }

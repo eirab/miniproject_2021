@@ -11,17 +11,22 @@
 
 int main(void) {
 
-      
+    void configurePBClock();
+	void configurePins();
+	void spi_init();
+	void enable_timer2();
+	void enableGlobalInterrupts();
+	
 	
 	display_init();
  
 	
        
-    /*update_frame(10,27);
+    update_frame(10,27);
     update_frame(10,28);
     update_frame(11,27);
     update_frame(11,28);
-    ground_init();*/
+    ground_init();
 
 	
 	
