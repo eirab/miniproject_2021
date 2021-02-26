@@ -5,6 +5,8 @@
 #include "ground.h"
 #include "pic32mx.h"
 #include <stdlib.h>
+#include "display.h"
+#include "gamestate.h"
 
 
 int main(void) {
