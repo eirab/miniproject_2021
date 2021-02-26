@@ -1,7 +1,8 @@
 #include <stdint.h> 
-#include "mipslab.h"
+   
 #include "ground.h"
 #include <stdlib.h> //library including the rand function.
+
 
 uint8_t heightmap[128] = {0}; // array storing all induviual heights.
 int defaultHeight = 31;//default height of the ground

@@ -6,7 +6,7 @@
 
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"
-#include "mipslab.h" /* Declatations for these labs */
+    /* Declatations for these labs */
 
 const uint8_t const snopp[]= {
 0,0,0,0
