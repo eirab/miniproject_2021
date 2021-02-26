@@ -20,21 +20,27 @@ int main(void) {
 	display_init();
 	void enable_timer2();
 	void enableGlobalInterrupts();
-	
-	
-	display_string(0, "apa");
+	ground_init();
+
+
+	display_image();
+	display_update();
+
+	player_init();
+    player_display();
 	display_update();
 	
    
 
 	
-	
+
 	labinit(); /* Do any lab-specific initialization */
 
 	while( 1 )
 	{
 	  labwork(); /* Do lab-specific things again and again */
 	}
- 
+
+
 	return 0;
 }

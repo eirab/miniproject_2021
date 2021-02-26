@@ -5,12 +5,22 @@
 
 
 uint8_t heightmap[128] = {0}; // array storing all induviual heights.
-int defaultHeight = 31;//default height of the ground
-
+int defaultHeight = 30;//default height of the ground
+int indexNewChunk = 0;
 void ground_init(){
-    int i;
-    for(i = 0; i<128; i++){
+    int i,j;
+    for(i = 4; i<128; i+= 8){
         heightmap[i] = defaultHeight - rand() % 4;//takes the defaul heigh and removes a random number between 0-4.
+        for(j = 1; j<=4 ;j++){
+           if(defaultHeight - j > heightmap[i]){
+               heightmap[i + j] = heightmap[i] + j;
+               heightmap[i - j] = heightmap[i] + j;
+           }
+           else{
+               heightmap[i + j] = defaultHeight;
+               heightmap[i - j] = defaultHeight;
+           }
+        }
     }
     send_ground_info(); 
 }
@@ -18,24 +28,12 @@ void ground_init(){
 void send_ground_info(){
     int i,j;
     for(i = 0; i<128; i++){ //goes through all the heights.
-        for(j = 31; j >= (31 - heightmap[i]); j--)//fills all the heights so we dont draw one pixel.
-        {
-            update_frame(i,heightmap[i] + (31-heightmap[i]));
-        }
+        update_frame(i,heightmap[i]);
     }
 }
 
 void update_ground(){
-    uint8_t newGround = defaultHeight - rand() % 4;
-    int i;
-    for(i = 0; i < 128 ; i++){
-        if(i != 127){
-            heightmap[i] = heightmap[i+1];
-        }
-        else{
-            heightmap[i] = newGround;
-        }
-    }
+
     send_ground_info();
 }
 
