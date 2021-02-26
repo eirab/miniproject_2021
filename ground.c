@@ -1,5 +1,5 @@
 #include <stdint.h> 
-   
+#include "display.h"
 #include "ground.h"
 #include <stdlib.h> //library including the rand function.
 
