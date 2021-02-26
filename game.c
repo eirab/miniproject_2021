@@ -37,8 +37,10 @@ void labinit( void )
 /* This function is called repetitively from the main program */
 
 void labwork( void ) {
-  
-  display_icon(96, icon);
-	
+
+
+  display_image();
+  display_update();
+
   
 }

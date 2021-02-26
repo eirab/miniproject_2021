@@ -2,6 +2,9 @@
 
 
 
+
 int get_buttons(void);
 void enable_buttons();
-int getsw(void);
+void player_init();
+void player_display();
+
