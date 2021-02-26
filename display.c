@@ -9,6 +9,7 @@
      /* Declatations for these labs */
 #include "pic32mx.h"
 #include "assets.h"
+#include "display.h"
 
 /* Declare a helper function which is local to this file */
 static void num32asc( char * s, int ); 
