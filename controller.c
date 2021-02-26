@@ -42,6 +42,10 @@ void configurePins(){
 	/* Set up input pins */
 	TRISDSET = (1 << 8);
 	TRISFSET = (1 << 1);
+	
+	/*Set up LEDS*/
+	TRISECLR = 0xFF;
+	PORTECLR = 0xFF;
 }
 
 void enable_timer2(){
@@ -63,9 +67,6 @@ void enableGlobalInterrupts(){
 
 /* Interrupt Service Routine */
 void user_isr( void ){
-
-  PORTE = PORTE + 1;
-  
    
   IFSCLR(0) = 0x100;    // Clear flag
 }
