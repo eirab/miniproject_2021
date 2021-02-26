@@ -11,3 +11,4 @@ void configurePins();
 void enable_timer2();
 void enableGlobalInterrupts();
 void user_isr(void);
+void enable_interrupt(void);
