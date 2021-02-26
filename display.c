@@ -63,7 +63,7 @@ void update_frame(int x, int y){
 void spi_init(void){
 /* Set up SPI as master */
 	SPI2CON = 0;
-	SPI2BRG = 4;
+	SPI2BRG = 0xF;
 	/* SPI2STAT bit SPIROV = 0; */
 	SPI2STATCLR = 0x40;
 	/* SPI2CON bit CKP = 1; */
@@ -144,8 +144,8 @@ void display_image( ) {
 		spi_send_recv(0x22);
 		spi_send_recv(i);
 		//sets offset on x axis
-		spi_send_recv(0 & 0xF);
-		spi_send_recv(0x10 | (( 0 >> 4) & 0xF));
+		spi_send_recv( 0 & 0xF);
+		spi_send_recv(0x10 | (( 0>> 4) & 0xF));
 		
 		DISPLAY_CHANGE_TO_DATA_MODE;
 		//sends the data to the display.
