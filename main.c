@@ -14,12 +14,14 @@
 
 int main(void) {
 
-    configurePBClock();
+  configurePBClock();
 	configurePins();
 	spi_init();
 	display_init();
-	void enable_timer2();
-	void enableGlobalInterrupts();
+  enable_timer2();
+	enableGlobalInterrupts();
+
+
 	ground_init();
 
 
@@ -27,8 +29,9 @@ int main(void) {
 	display_update();
 
 	player_init();
-    player_display();
+  player_display();
 	display_update();
+
 	
    
 

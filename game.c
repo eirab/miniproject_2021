@@ -14,6 +14,8 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
 #include "display.h"
+#include "gamestate.h"
+#include "assets.h"
 
 
 void *stdin, *stdout, *stderr;
@@ -25,6 +27,7 @@ void *stdin, *stdout, *stderr;
 void labinit( void )
 {
    
+   enable_buttons();
   
     
     
@@ -38,5 +41,6 @@ void labwork( void ) {
 
   display_image();
   display_update();
+
   
 }

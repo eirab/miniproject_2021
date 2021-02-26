@@ -6,6 +6,7 @@
 
 /* Declare display-related functions from mipslabfunc.c */
 void display_image();
+void display_icon();
 void display_init(void);
 void display_string(int line, char *s);
 void display_update(void);
