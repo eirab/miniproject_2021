@@ -4,7 +4,8 @@ controller.c.o: controller.c pic32mx.h /opt/mcb32tools/include/stdint.h \
  /opt/mcb32tools/include/klibc/extern.h \
  /opt/mcb32tools/include/klibc/inline.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h \
- /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h
+ /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h \
+ controller.h
 controller.c pic32mx.h /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h :
  ground.h /opt/mcb32tools/include/stdlib.h :
@@ -12,3 +13,4 @@ controller.c pic32mx.h /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/include/klibc/inline.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h :
+ controller.h :

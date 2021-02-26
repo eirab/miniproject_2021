@@ -47,7 +47,7 @@ void configurePins(){
 
 void enable_timer2(){
     
- T2CONSET = 0x70;              //Set prescale to 256, prescale < 256 will generate int requiring more than 16 bits
+ 	T2CONSET = 0x70;              //Set prescale to 256, prescale < 256 will generate int requiring more than 16 bits
     PR2 = (80000000 / 256) / 10;  //Set period to 1/10 of a second
     TMR2 = 0;                     //Clear tmr register
     T2CONSET = 0x8000;            // turn timer on
