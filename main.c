@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include "display.h"
 #include "gamestate.h"
+#include "game.h";
+
 
 
 int main(void) {
