@@ -1,5 +1,7 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"
+#include "assets.h"
+
 
 
 /* Declare display-related functions from mipslabfunc.c */

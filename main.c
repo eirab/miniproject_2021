@@ -18,19 +18,13 @@ int main(void) {
 	void configurePins();
 	void spi_init();
 	display_init();
-	void enable_timer2();
-	void enableGlobalInterrupts();
+	//void enable_timer2();
+	//void enableGlobalInterrupts();
 	
 	
- 
-	
-	ground_init();
-    update_frame(10,27);
-    update_frame(10,28);
-    update_frame(11,27);
-    update_frame(11,28);
-	display_image();
+	display_string(0, "apa");
 	display_update();
+	
    
 
 	

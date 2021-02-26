@@ -5,7 +5,7 @@ main.c.o: main.c /opt/mcb32tools/include/stdint.h \
  /opt/mcb32tools/include/klibc/inline.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h \
- pic32mx.h display.h gamestate.h game.h controller.h
+ pic32mx.h display.h assets.h gamestate.h game.h controller.h
 main.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h :
  ground.h /opt/mcb32tools/include/stdlib.h :
@@ -13,4 +13,4 @@ main.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/include/klibc/inline.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h :
- pic32mx.h display.h gamestate.h game.h controller.h :
+ pic32mx.h display.h assets.h gamestate.h game.h controller.h :
