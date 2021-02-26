@@ -9,5 +9,5 @@
 void configurePBClock();
 void configurePins();
 void enable_timer2();
-void enable_interrupt();
-void usr_isr(void);
+void enableGlobalInterrupts();
+void user_isr(void);
