@@ -65,8 +65,3 @@ void enableGlobalInterrupts(){
 }
 
 
-/* Interrupt Service Routine */
-void user_isr( void ){
-   
-  IFSCLR(0) = 0x100;    // Clear flag
-}

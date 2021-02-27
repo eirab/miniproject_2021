@@ -24,7 +24,7 @@ void enable_buttons(){
 int get_buttons(){
 
     int btn = ((PORTD >> 4) & 0x00E) | ((PORTF >> 1) & 0x30); 
-
+}
 
 
 struct Player{
@@ -37,7 +37,7 @@ struct Player{
     int mesh[8];
 } Player;
 
- Player player_init(){
+ /*Player player_init(){
 
     
     foo.meshLength = sizeof(foo.mesh)/sizeof(int);
@@ -48,14 +48,14 @@ struct Player{
     int temp[] = {50,16,50,15,51,15,51,16};
     memcpy(foo.mesh, temp, sizeof (temp));
     return foo;
-}
+}*/
 
-void player_display(){
+/*void player_display(){
     int i;
     for(i = 0; i<foo.meshLength-1  ; i+=2){
         update_frame(foo.mesh[i], foo.mesh[i + 1]);
     }
-}
+}*/
 
 
 void move(){

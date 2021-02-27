@@ -28,8 +28,8 @@ int main(void) {
 	display_image();
 	display_update();
 
-	player_init();
-  player_display();
+	//player_init();
+  //player_display();
 	display_update();
 
 	

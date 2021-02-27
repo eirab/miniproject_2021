@@ -16,11 +16,20 @@
 #include "display.h"
 #include "gamestate.h"
 #include "assets.h"
+#include "game.h"
 
-struct player foo;
 
 void *stdin, *stdout, *stderr;
 
+/* Interrupt Service Routine */
+void user_isr( void ){
+   
+
+  display_image();
+  
+
+  IFSCLR(0) = 0x100;    // Clear flag
+}
 
 
 
@@ -39,9 +48,6 @@ void gameinit( void )
 
 void gameloop( void ) {
 
-
-  display_image();
-  display_update();
 
   
 }

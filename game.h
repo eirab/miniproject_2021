@@ -3,3 +3,4 @@
 
 void gameinit( void );
 void gameloop( void );
+void user_isr(void);
