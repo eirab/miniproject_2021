@@ -4,6 +4,7 @@
         "mipslab.h": "c",
         "stdint.h": "c",
         "display.h": "c",
-        "controller.h": "c"
+        "controller.h": "c",
+        "gamestate.h": "c"
     }
 }

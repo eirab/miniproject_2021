@@ -1,5 +1,5 @@
 
-/* mipslabwork.c
+/* mipsgameloop.c
 
    This file written 2015 by F Lundevall
    Updated 2017-04-21 by F Lundevall
@@ -17,6 +17,7 @@
 #include "gamestate.h"
 #include "assets.h"
 
+struct player foo;
 
 void *stdin, *stdout, *stderr;
 
@@ -24,7 +25,7 @@ void *stdin, *stdout, *stderr;
 
 
 /* Lab-specific initialization goes here */
-void labinit( void )
+void gameinit( void )
 {
    
    enable_buttons();
@@ -36,7 +37,7 @@ void labinit( void )
 
 /* This function is called repetitively from the main program */
 
-void labwork( void ) {
+void gameloop( void ) {
 
 
   display_image();

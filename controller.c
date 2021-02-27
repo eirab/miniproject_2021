@@ -61,7 +61,7 @@ void enable_timer2(){
 
 void enableGlobalInterrupts(){
 
-    enable_interrupt();       //Call enable interrupt that is in labwork.S
+    enable_interrupt();       //Call enable interrupt that is in gameloop.S
 }
 
 

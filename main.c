@@ -37,11 +37,11 @@ int main(void) {
 
 	
 
-	labinit(); /* Do any lab-specific initialization */
+	gameinit(); /* Do any lab-specific initialization */
 
 	while( 1 )
 	{
-	  labwork(); /* Do lab-specific things again and again */
+	  gameloop(); /* Do lab-specific things again and again */
 	}
 
 

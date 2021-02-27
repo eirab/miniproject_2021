@@ -1,4 +1,4 @@
-  # labwork.S
+  # gameloop.S
   # Written 2015-2017 by F Lundevall
   # Skeleton file for IS1200/IS1500 lab 1.
   # The macros PUSH and POP are in the public domain.

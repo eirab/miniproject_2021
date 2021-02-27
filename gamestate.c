@@ -6,6 +6,7 @@
 #include "gamestate.h"
 
 
+
 void enable_buttons(){
 
 
@@ -24,19 +25,21 @@ int get_buttons(){
 
     int btn = ((PORTD >> 4) & 0x00E) | ((PORTF >> 1) & 0x30); 
 
-struct player foo;
 
-struct player{
+
+struct Player{
+
     int Lboundx;
     int Rboundx;
     int midX;
     int midY;
     int meshLength;
     int mesh[8];
-};
+} Player;
 
-void player_init(){
+ Player player_init(){
 
+    
     foo.meshLength = sizeof(foo.mesh)/sizeof(int);
     foo.Lboundx = 15;
     foo.Rboundx = 16;
@@ -44,6 +47,7 @@ void player_init(){
     foo.midY = 50;
     int temp[] = {50,16,50,15,51,15,51,16};
     memcpy(foo.mesh, temp, sizeof (temp));
+    return foo;
 }
 
 void player_display(){
