@@ -42,6 +42,12 @@ void update_frame(int x, int y){
     nextFrame[offset * 128 + x] |= 1 << (y - offset * 8);
 }
 
+void remove_frame(int x, int y){
+    short offset = 0;
+    if (y > 0) { offset = y / 8; }
+    nextFrame[offset * 128 + x] &= 0 << (y - offset * 8);
+}
+
 
 
 /* display_debug

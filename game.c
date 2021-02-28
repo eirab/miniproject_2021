@@ -17,6 +17,7 @@
 #include "gamestate.h"
 #include "assets.h"
 #include "game.h"
+#include "ground.h"
 
 
 void *stdin, *stdout, *stderr;
@@ -24,11 +25,11 @@ void *stdin, *stdout, *stderr;
 /* Interrupt Service Routine */
 void user_isr( void ){
    
-
-  display_image();
+    update_ground();
+    display_image();
   
 
-  IFSCLR(0) = 0x100;    // Clear flag
+    IFSCLR(0) = 0x100;    // Clear flag
 }
 
 
