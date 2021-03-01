@@ -9,3 +9,4 @@ extern const uint8_t const icon[128];
 extern const uint8_t const snopp[128];
 char textbuffer[4][16];
 const uint8_t const font[];
+const uint8_t const spaceship[];
