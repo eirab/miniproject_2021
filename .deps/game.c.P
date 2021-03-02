@@ -5,7 +5,7 @@ game.c.o: game.c /opt/mcb32tools/include/stdint.h \
  /opt/mcb32tools/include/klibc/inline.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h \
- gamestate.h game.h ground.h
+ spaceship.h gamestate.h game.h ground.h
 game.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h :
  pic32mx.h display.h assets.h /opt/mcb32tools/include/stdlib.h :
@@ -13,4 +13,4 @@ game.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/include/klibc/inline.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h :
- gamestate.h game.h ground.h :
+ spaceship.h gamestate.h game.h ground.h :

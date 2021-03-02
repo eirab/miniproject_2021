@@ -5,7 +5,7 @@ ground.c.o: ground.c /opt/mcb32tools/include/stdint.h \
  /opt/mcb32tools/include/klibc/inline.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h \
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h \
- ground.h
+ spaceship.h ground.h
 ground.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdint-gcc.h :
  display.h pic32mx.h assets.h /opt/mcb32tools/include/stdlib.h :
@@ -13,4 +13,4 @@ ground.c /opt/mcb32tools/include/stdint.h :
  /opt/mcb32tools/include/klibc/inline.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stddef.h :
  /opt/mcb32tools/lib/gcc/mipsel-mcb32-elf/6.4.0/include/stdbool.h :
- ground.h :
+ spaceship.h ground.h :

@@ -5,6 +5,15 @@
         "stdint.h": "c",
         "display.h": "c",
         "controller.h": "c",
-        "gamestate.h": "c"
+        "gamestate.h": "c",
+        "assets.h": "c",
+        "pic32mx.h": "c",
+        "ground.h": "c",
+        "game.h": "c",
+        "spaceship.h": "c",
+        "stdbool.h": "c",
+        "string.h": "c",
+        "time.h": "c",
+        "features.h": "c"
     }
 }

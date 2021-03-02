@@ -12,6 +12,8 @@
 
 
 
+
+
 int main(void) {
 
   configurePBClock();
@@ -20,18 +22,6 @@ int main(void) {
 	display_init();
   enable_timer2();
 	enableGlobalInterrupts();
-
-
-	ground_init();
-
-
-	display_image();
-	display_update();
-
-	//player_init();
-  //player_display();
-	display_update();
-
 	
    
 

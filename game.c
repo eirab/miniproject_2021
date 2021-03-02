@@ -18,18 +18,54 @@
 #include "assets.h"
 #include "game.h"
 #include "ground.h"
+#include "spaceship.h"
 
+
+
+#define PAGE0_MIN_X 0
+#define PAGE0_MAX_X 122
+#define PAGE1_MIN_X 128
+#define PAGE1_MAX_X 249
+#define PAGE2_MIN_X 256
+#define PAGE2_MAX_X 377
+#define PAGE3_MIN_X 384
+#define PAGE3_MAX_X 506
+
+#define SPACESHIP_ARR_LEN 6
+
+
+  uint8_t sp[6]= {195,
+195,
+126,
+126,
+126,
+60};
+
+struct Spaceship player;
+int interval;
+int randomInterval;
 
 void *stdin, *stdout, *stderr;
 
 /* Interrupt Service Routine */
 void user_isr( void ){
    
+   
+    
+    move();
     update_ground();
-    display_image();
-  
+    render_frame();
+   
 
     IFSCLR(0) = 0x100;    // Clear flag
+}
+
+void gen_interval(){
+
+
+    int p = rand()%((10000)-100) + 100;
+   randomInterval = p;
+
 }
 
 
@@ -37,11 +73,15 @@ void user_isr( void ){
 /* Lab-specific initialization goes here */
 void gameinit( void )
 {
-   
+   randomInterval = 0;
+   interval = 0;
+   gen_interval();
+   ground_init();
    enable_buttons();
-  
-    
-    
+   //Bit 0, first byte
+   player.xPos = 0;
+   player.page_pos = 0;
+
   return;
 }
 
@@ -49,6 +89,19 @@ void gameinit( void )
 
 void gameloop( void ) {
 
+   interval++;
+  // int randomMonster = rand()%((2+1)-1) + 1;
+   
+   horizontal_collison();
+   PORTECLR = 0xFF;
+
+   if(interval == randomInterval){
+      insert_monster();
+      interval = 0;
+      gen_interval();
+   }
+
+   
 
   
 }
