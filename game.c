@@ -1,15 +1,11 @@
+/*************************************
+ * game.c contains the gameloop, where the function
+ * gameloop() is repeatedly called from main.c. 
+ * 
+ * Last updated: 2021-03-03
+ * 
+ * Written by: Eira Birkhammar & Viktor Borg
 
-/* mipsgameloop.c
-
-   This file written 2015 by F Lundevall
-   Updated 2017-04-21 by F Lundevall
-
-   This file should be changed by YOU! So you must
-   add comment(s) here with your name(s) and date(s):
-
-   This file modified 2017-04-31 by Ture Teknolog 
-
-   For copyright and licensing, see file COPYING */
 
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
@@ -21,26 +17,6 @@
 #include "spaceship.h"
 
 
-
-#define PAGE0_MIN_X 0
-#define PAGE0_MAX_X 122
-#define PAGE1_MIN_X 128
-#define PAGE1_MAX_X 249
-#define PAGE2_MIN_X 256
-#define PAGE2_MAX_X 377
-#define PAGE3_MIN_X 384
-#define PAGE3_MAX_X 506
-
-#define SPACESHIP_ARR_LEN 6
-
-
-  uint8_t sp[6]= {195,
-195,
-126,
-126,
-126,
-60};
-
 struct Spaceship player;
 int interval;
 int randomInterval;
@@ -50,8 +26,6 @@ void *stdin, *stdout, *stderr;
 /* Interrupt Service Routine */
 void user_isr( void ){
    
-   
-    
     move();
     update_ground();
     render_frame();
@@ -59,9 +33,9 @@ void user_isr( void ){
 
     IFSCLR(0) = 0x100;    // Clear flag
 }
-
+/* Doesn't work, is supposed to generate a
+random interval where monsters appear */
 void gen_interval(){
-
 
     int p = rand()%((10000)-100) + 100;
    randomInterval = p;
@@ -69,8 +43,7 @@ void gen_interval(){
 }
 
 
-
-/* Lab-specific initialization goes here */
+/* Initialises the game and sets start-up values*/
 void gameinit( void )
 {
    randomInterval = 0;
@@ -85,8 +58,7 @@ void gameinit( void )
   return;
 }
 
-/* This function is called repetitively from the main program */
-
+/* Called repeatedly from main */
 void gameloop( void ) {
 
    interval++;

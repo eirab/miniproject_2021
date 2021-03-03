@@ -1,5 +1,5 @@
-#include <stdint.h>   /* Declarations of uint_32 and the like */
- /* Declarations of system-specific addresses etc */
+#include <stdint.h> /* Declarations of uint_32 and the like */
+                    /* Declarations of system-specific addresses etc */
 #include "pic32mx.h"
 #include "display.h"
 #include <string.h>
@@ -8,12 +8,11 @@
 #include <stdbool.h>
 #include "game.h"
 #include "spaceship.h"
- 
 
-
-void enable_buttons(){
-
-
+/* Enables all buttons 
+Written by Eira Birkhammar */
+void enable_buttons()
+{
     //Configure BTN1 to be input
     TRISFSET = 0x2;
     //Clear BTN1 data
@@ -25,117 +24,119 @@ void enable_buttons(){
     PORTDCLR = 0xE0;
 }
 
-uint32_t get_buttons(){
-
+/* Checks if buttons are pressed, in which case the
+corresponding bit for the button in question is 1
+Written by Eira Birkhammar */
+uint32_t get_buttons()
+{
     uint32_t btn_d = ((PORTD >> 4) & 0x000E);
     uint32_t btn_f = ((PORTF >> 1) & 0x1);
     uint32_t btn = btn_d | btn_f;
 
     return btn;
-
-    
 }
 
-void move(){
+/* Polling function to check if any button is pressed 
+Written by Eira Birkhammar */
+void move()
+{
 
     //for button 1
-    if(get_buttons() & 0x1){
+    if (get_buttons() & 0x1)
+    {
         move_up();
-        
-    }    
-    
-     //for button 2
-    if(get_buttons() & 0x2){
-        move_down();
-        
     }
-       //for button 3
-    if(get_buttons() & 0x4){
+
+    //for button 2
+    if (get_buttons() & 0x2)
+    {
+        move_down();
+    }
+    //for button 3
+    if (get_buttons() & 0x4)
+    {
         move_right();
     }
 
-       //for button 4
-    if(get_buttons() & 0x8){
+    //for button 4
+    if (get_buttons() & 0x8)
+    {
         move_left();
     }
-
-     
 }
 
-void remove_spaceship(){
-     
+/* Removes the 6 bytes which represent the spaceship */
+void remove_spaceship()
+{
+
     int page = player.page_pos;
-    int curX = (player.xPos + (page *128));
+    int curX = (player.xPos + (page * 128));
     int i;
-  
-    for(i = curX; i < (curX+6); i++){
+
+    for (i = curX; i < (curX + 6); i++)
+    {
         nextFrame[i] = 0;
     }
 }
 
-void horizontal_collison(){
+void horizontal_collison()
+{
 
-int nextByte = ((player.xPos + (player.page_pos*128)+6));
-uint8_t nextData = nextFrame[nextByte];
-if(!(nextData == 0)){
-    PORTESET = 0xFF;
-
-}
-
-
-
- 
-}
-
-void move_left(){
-int x = (player.xPos + (player.page_pos*128));
-if(player.xPos >3){
-remove_spaceship();
-player.xPos = player.xPos -3;
-insert_spaceship();
-}
-}
-
-void move_right(){
-int x = player.xPos;
-
-if(x < 118){
-
-remove_spaceship();
-player.xPos = player.xPos+3;
-insert_spaceship();
-}
-
-}
-void move_down(){
-
-    if(player.page_pos < 3){
-        remove_spaceship();
-        player.page_pos = player.page_pos+1;
-        insert_spaceship;
-        
+    int nextByte = ((player.xPos + (player.page_pos * 128) + 6));
+    uint8_t nextData = nextFrame[nextByte];
+    if (!(nextData == 0))
+    {
+        PORTESET = 0xFF;
     }
-
-
 }
 
-void move_up(){
-
-    if(player.page_pos > 0){
+void move_left()
+{
+    int x = (player.xPos + (player.page_pos * 128));
+    if (player.xPos > 3)
+    {
         remove_spaceship();
-        player.page_pos = player.page_pos -1;
+        player.xPos = player.xPos - 3;
         insert_spaceship();
-
-
     }
-
-
 }
 
 
+void move_right()
+{
+    int x = player.xPos;
 
+    if (x < 118)
+    {
+        remove_spaceship();
+        player.xPos = player.xPos + 3;
+        insert_spaceship();
+    }
+}
+/* Moves spaceship down, unless it's
+at the bottom already 
+Written by Eira Birkhammar */
+void move_down()
+{
 
+    if (player.page_pos < 3)
+    {
+        remove_spaceship();
+        player.page_pos = player.page_pos + 1;
+        insert_spaceship;
+    }
+}
 
+/* Moves spaceship up one page, unless
+the page is 0 (meaning it's already at the top)
+Written by Eira Birkhammar */
+void move_up()
+{
 
-
-
+    if (player.page_pos > 0)
+    {
+        remove_spaceship();
+        player.page_pos = player.page_pos - 1;
+        insert_spaceship();
+    }
+}
