@@ -14,3 +14,4 @@ uint8_t spi_send_recv(uint8_t data);
 void update_frame(int x, int y);
 void spi_init(void);
 void display_debug( volatile int * const addr );
+void remove_frame(int x, int y);

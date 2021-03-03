@@ -7,22 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e13f73f6-d4b4-4c5a-8d3b-60332d39adcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/assets.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/assets.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/assets.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/controller.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/controller.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/display.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/display.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/game.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/game.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/controller.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/display.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/display.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/game.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/game.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.c" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamestate.h" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ground.c" beforeDir="false" afterPath="$PROJECT_DIR$/ground.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ground.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/ground.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outfile.elf" beforeDir="false" afterPath="$PROJECT_DIR$/outfile.elf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outfile.hex" beforeDir="false" afterPath="$PROJECT_DIR$/outfile.hex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stubs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/stubs.c.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +42,13 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,6 +74,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
