@@ -20,7 +20,7 @@ int main(void) {
 	configurePins();
 	spi_init();
 	display_init();
-  enable_timer2();
+
 	enableGlobalInterrupts();
 	
    

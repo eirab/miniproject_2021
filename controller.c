@@ -64,4 +64,8 @@ void enableGlobalInterrupts(){
     enable_interrupt();       //Call enable interrupt that is in gameloop.S
 }
 
+void disable_timer2(){
+    T2CONCLR = 0x8000;
+}
+
 

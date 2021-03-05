@@ -60,6 +60,15 @@ void remove_frame(int x, int y)
 	nextFrame[offset * 128 + x] &= 0 << (y - offset * 8);
 }
 
+int frame_taken(int x, int y){
+    short offset = 0;
+    if (y > 0)
+    {
+        offset = y / 8;
+    }
+    return nextFrame[offset * 128 + x] &= 1 << (y - offset * 8);
+}
+
 void render_frame()
 {
 	int i, j;

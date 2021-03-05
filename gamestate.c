@@ -1,4 +1,6 @@
-#include <stdint.h> /* Declarations of uint_32 and the like */
+#include <stdint.h>
+
+/* Declarations of uint_32 and the like */
                     /* Declarations of system-specific addresses etc */
 #include "pic32mx.h"
 #include "display.h"
@@ -8,6 +10,9 @@
 #include <stdbool.h>
 #include "game.h"
 #include "spaceship.h"
+#include "controller.h"
+#include "ground.h"
+#include "monster.h"
 
 /* Enables all buttons 
 Written by Eira Birkhammar */
@@ -24,6 +29,15 @@ void enable_buttons()
     PORTDCLR = 0xE0;
 }
 
+void enable_switch1(){
+
+    TRISDSET = 0x100;
+    PORTDCLR = 0x100;
+}
+
+int get_switch1(){
+    return ((PORTD >> 8) & 0x1);
+}
 /* Checks if buttons are pressed, in which case the
 corresponding bit for the button in question is 1
 Written by Eira Birkhammar */
@@ -35,6 +49,7 @@ uint32_t get_buttons()
 
     return btn;
 }
+
 
 /* Polling function to check if any button is pressed 
 Written by Eira Birkhammar */
@@ -86,7 +101,10 @@ void horizontal_collison()
     uint8_t nextData = nextFrame[nextByte];
     if (!(nextData == 0))
     {
-        PORTESET = 0xFF;
+        PORTE = PORTE >> 1;
+        if(PORTE == 0){
+            gameover_routine();
+        }
     }
 }
 
@@ -140,3 +158,23 @@ void move_up()
         insert_spaceship();
     }
 }
+/* the routine for when the game is over. display to the player that the game is over and to play again
+ * press btn 1. It also disables timer2 effectily turning game of. then waits untill btn 1 is pressed and
+ * then clear screen data and then calls gameinit.
+ * Written by Viktor Borg */
+void gameover_routine(){
+    display_string(1,"game over!");
+    display_string(2,"press btn 1 to");
+    display_string(3,"play again");
+    display_update();
+    disable_timer2();
+    while(!(get_buttons() & 0x1)){}
+    remove_ground_info();
+    gameinit();
+
+}
+
+
+
+
+

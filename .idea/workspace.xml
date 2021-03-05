@@ -7,13 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e13f73f6-d4b4-4c5a-8d3b-60332d39adcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Projectile.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projectile.c.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monster.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monster.c.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monster.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deps/assets.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/assets.c.P" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deps/controller.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/controller.c.P" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deps/display.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/display.c.P" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.deps/game.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/game.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/gamestate.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/gamestate.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/ground.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/ground.c.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.deps/main.c.P" beforeDir="false" afterPath="$PROJECT_DIR$/.deps/main.c.P" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/assets.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/controller.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.h" beforeDir="false" afterPath="$PROJECT_DIR$/controller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.c" beforeDir="false" afterPath="$PROJECT_DIR$/display.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/display.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/display.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.c" beforeDir="false" afterPath="$PROJECT_DIR$/game.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/game.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate.c" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamestate.h" beforeDir="false" afterPath="$PROJECT_DIR$/gamestate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ground.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/ground.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outfile.elf" beforeDir="false" afterPath="$PROJECT_DIR$/outfile.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outfile.hex" beforeDir="false" afterPath="$PROJECT_DIR$/outfile.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stubs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/stubs.c.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +45,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1p1N9b6Zxg41UMtSCptOIjAMOGh" />
   <component name="ProjectLevelVcsManager">
@@ -43,9 +76,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -58,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614346488871</updated>
       <workItem from="1614346491500" duration="10031000" />
+      <workItem from="1614792842554" duration="12293000" />
     </task>
     <servers />
   </component>

@@ -19,4 +19,6 @@ void remove_frame(int x, int y);
 void insert_spaceship();
 void insert_monster();
 void gen_interval();
+int frame_taken();
+static void num32asc(char *s,int n);
 uint8_t nextFrame[128*4];
