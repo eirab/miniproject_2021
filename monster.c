@@ -1,3 +1,7 @@
+/* ---------- Monster.c - functions related to the behaviour of the monster --------*/
+/* Written by Viktor Borg */
+
+
 #include "monster.h"
 #include "display.h"
 #include "stdlib.h"
