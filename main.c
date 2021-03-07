@@ -1,7 +1,7 @@
+/*------------ main.c - Main ------------*/
+/* Written by Eira Birkhammar and Viktor Borg */
 
-#include <stdint.h>   /* Declarations of uint_32 and the like */
- /* Declarations of system-specific addresses etc */
-     /* Declatations for these labs */
+#include <stdint.h>   
 #include "ground.h"
 #include "pic32mx.h"
 #include <stdlib.h>
@@ -11,27 +11,23 @@
 #include "controller.h"
 
 
-
-
-
 int main(void) {
 
-  configurePBClock();
+	configurePBClock();
 	configurePins();
 	spi_init();
 	display_init();
-
 	enableGlobalInterrupts();
 	
    
 
 	
 
-	gameinit(); /* Do any lab-specific initialization */
+	gameinit(); /* Initialise game */
 
 	while( 1 )
 	{
-	  gameloop(); /* Do lab-specific things again and again */
+	  gameloop(); /* Game loop */
 	}
 
 
