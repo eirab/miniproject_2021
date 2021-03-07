@@ -1,9 +1,13 @@
+/*------ ground.c - Generates mountains of varying size --------*/
+/* Written by Viktor Borg */
+
+
 #include <stdint.h> 
 #include "display.h"
 #include "ground.h"
 #include <stdlib.h> //library including the rand function.
 
-#define MIN_Height_Offset 10 //minium height of mountain.
+#define MIN_Height_Offset 10 //minimum height of mountain.
 #define Default_Height 30
 #define MAX_Height_Offset 25 //maximum height of mountain.
 
