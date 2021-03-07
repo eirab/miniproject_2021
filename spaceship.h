@@ -1,6 +1,6 @@
 #include <stdint.h>
-#ifndef TYPES_H
-#define TYPES_H
+#ifndef SPACESHIP_H
+#define SPACESHIP_H
 
 
 
