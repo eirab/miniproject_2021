@@ -1,55 +1,16 @@
-/* mipslabdata.c
-   This file compiled 2015 by F Lundevall
-   from original code written by Axel Isaksson
+/*----- assets.c - data related to graphics of the game ----*/
+/* Partly written by Fredrik Lundevall and Axel Isaksson,
+partly written by Eira Birkhammar. See commentary.
+*/
 
-   For copyright and licensing, see file COPYING */
-
-#include <stdint.h>   /* Declarations of uint_32 and the like */
+#include <stdint.h>   
 #include "pic32mx.h"
 #include "assets.h"
-    /* Declatations for these labs */
-
-
-
-const uint8_t const snopp[]= {
-0,0,0,0
-,0,0,3,128
-,0,0,14,240
-,0,0,16,120
-,0,0,48,200
-,0,0,112,8
-,0,1,152,8
-,0,3,14,24
-,0,6,3,240
-,0,24,0,192
-,0,16,1,128
-,0,96,99,0
-,0,193,198,0
-,1,131,28,0
-,3,6,48,0
-,6,12,96,0
-,12,24,192,0
-,16,1,0,0
-,48,7,0,0
-,32,1,128,0
-,32,32,192,0
-,36,0,64,0
-,33,0,64,0
-,32,4,64,0
-,32,0,32,0
-,32,18,96,0
-,16,128,64,0
-,24,0,64,0
-,14,49,128,0
-,3,255,0,0
-,1,128,0,0
-,0,0,0,0
-
-};
-
+   
 
 char textbuffer[4][16];
 
+/* Not written by us */
 const uint8_t const font[] = {
 	0, 0, 0, 0, 0, 0, 0, 0,
 	0, 0, 0, 0, 0, 0, 0, 0,
@@ -181,19 +142,9 @@ const uint8_t const font[] = {
 	0, 120, 68, 66, 68, 120, 0, 0,
 };
 
-const uint8_t const icon[] = {
 
-	35, 175, 91, 212, 63, 234, 149, 111,
-	171, 84, 253, 252, 254, 253, 126, 184,
-	195, 52, 201, 22, 225, 27, 196, 19,
-	165, 74, 36, 146, 72, 162, 85, 8,
-	226, 25, 166, 80, 167, 216, 167, 88,
-	106, 149, 161, 95, 135, 91, 175, 87,
-	142, 123, 134, 127, 134, 121, 134, 121,
-	132, 59, 192, 27, 164, 74, 177, 70,
-	184, 69, 186, 69, 254, 80, 175, 217,
-};
-
+/* Written by Eira 
+* Spaceship consisting of six 8 byte values */
 const uint8_t spaceship[6] =
 {
 195,
@@ -205,6 +156,8 @@ const uint8_t spaceship[6] =
 
 };
 
+/* Written by Eira
+* Monster consisting of an eight 8 byte values*/
 const uint8_t monster[8]={
 254
 ,15
