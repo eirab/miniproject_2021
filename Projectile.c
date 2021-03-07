@@ -1,3 +1,11 @@
+/*----- Projectile.c - functions related to projectiles fired in the game -----*/
+/*
+*   The entire file is authored by Viktor Borg
+*
+*/
+
+
+
 #include "projectile.h"
 #include "display.h"
 
