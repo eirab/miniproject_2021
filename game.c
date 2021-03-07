@@ -1,10 +1,10 @@
-/*************************************
- * game.c contains the gameloop, where the function
+/*------- game.c - Game loop file ---------*/
+ /* game.c contains the gameloop, where the function
  * gameloop() is repeatedly called from main.c. 
  * 
- * Last updated: 2021-03-03
+ *
  * 
- * Written by: Eira Birkhammar & Viktor Borg
+ * Written by: Eira Birkhammar & Viktor Borg */
 
 
 #include <stdint.h>   /* Declarations of uint_32 and the like */
@@ -25,22 +25,21 @@ int randomInterval;
 
 void *stdin, *stdout, *stderr;
 
-/* Interrupt Service Routine */
+/* Interrupt service routine for Timer 2 */
 void user_isr( void ){
    
-    move();
+    move(); /* Poll buttons */
     if(get_switch1()){
-        activate_projectile_player(player.xPos + 7,player.page_pos * 8 + 4);
+        activate_projectile_player(player.xPos + 7,player.page_pos * 8 + 4); /* Poll switch status */
     }
-    monster_update();
-    update_ground();
-    projectile_update();
-    horizontal_collison();
+    monster_update(); /* Update monster */
+    update_ground(); /* Update ground*
+    projectile_update(); /* Update projectile*/
+    horizontal_collison(); /* Is there a horizontal collison? */
 
+    render_frame(); /* Display updated frame */
 
-    render_frame();
-
-    IFSCLR(0) = 0x100;    // Clear flag
+    IFSCLR(0) = 0x100;    /* Clear Timer 2 flag */
 }
 /* Doesn't work, is supposed to generate a
 random interval where monsters appear */
@@ -53,19 +52,26 @@ void gen_interval(){
 
 
 /* Initialises the game and sets start-up values*/
-void gameinit( void )
-{
-    enable_timer2();
+void gameinit( void ){  
+   
+   /* Enable Timer 2 */
+   enable_timer2();
+    
    randomInterval = 0;
    interval = 0;
    gen_interval();
-   ground_init();
-   enable_buttons();
-   enable_switch1();
-   //Bit 0, first byte
-   player.xPos = 0;
-   player.page_pos = 0;
+  
+   /* Enable buttons and switch 1 */
+    enable_buttons();
+    enable_switch1();
+   
+   /* Initialise spaceship positon */
+    player.xPos = 0;
+    player.page_pos = 0;
     PORTESET = 0x1F;
+   
+   /* Initialise frame elements */
+    ground_init();
     projectile_init();
     monster_init();
 
