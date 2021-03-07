@@ -6,6 +6,7 @@
 
 
 /* Declare display-related functions from mipslabfunc.c */
+void delete_frame_data();
 void render_frame();
 void display_icon();
 void display_init(void);
@@ -21,4 +22,5 @@ void insert_monster();
 void gen_interval();
 int frame_taken();
 static void num32asc(char *s,int n);
+void remove_monster();
 uint8_t nextFrame[128*4];

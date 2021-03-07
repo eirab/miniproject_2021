@@ -30,10 +30,14 @@ void user_isr( void ){
    
     move(); /* Poll buttons */
     if(get_switch1()){
-        activate_projectile_player(player.xPos + 7,player.page_pos * 8 + 4); /* Poll switch status */
+//<<<<<<< Updated upstream
+        //activate_projectile_player(player.xPos + 7,player.page_pos * 8 + 4); /* Poll switch status */
+//=======
+        activate_projectile_player(player.xPos + 8,player.page_pos * 8 + 4);
+//>>>>>>> Stashed changes
     }
     monster_update(); /* Update monster */
-    update_ground(); /* Update ground*
+    update_ground(); /* Update ground*/
     projectile_update(); /* Update projectile*/
     horizontal_collison(); /* Is there a horizontal collison? */
 
@@ -86,7 +90,7 @@ void gameloop( void ) {
 
 
    if(interval == randomInterval){
-      insert_monster();
+      //insert_monster();
       interval = 0;
       gen_interval();
    }

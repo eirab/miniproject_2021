@@ -14,18 +14,18 @@ int yPos[10] = {0};
 
 void projectile_init(){
     int i;
-    for(i = 0; i< 9 ; i++){
+    for(i = 0; i< 10 ; i++){
         xPos[i] = 0;
         yPos[i] = 0;
     }
 }
 void activate_projectile_player(int x , int y){
     int i;
-    for(i = 6 ; i <9 ; i++){
+    for(i = 6 ; i <10 ; i++){
         if(xPos[i] == 0){
             xPos[i] = x;
             yPos[i] = y;
-            return;
+            break;
         }
     }
 }
@@ -53,8 +53,8 @@ void activate_projectiles_monster(int count,int x[], int y[]){
 
 void collision_detection_projectile(){
     int i;
-    for(i = 0; i < 9; i++ ){
-        if(frame_taken() || xPos[i] <= 0 || xPos[i] >=127){
+    for(i = 0; i < 10; i++ ){
+        if(frame_taken(xPos[i],yPos[i]) || xPos[i] <= 0 || xPos[i] >=127){
             xPos[i] = 0;
             yPos[i] = 0;
         }
@@ -73,9 +73,9 @@ void projectile_update(){
 
     }
     int j;
-    for(j = 6; j < 9 ; j++){
-        if(xPos[i] != 0){
-            xPos[i] += 2;
+    for(j = 6; j < 10 ; j++){
+        if(xPos[j] != 0){
+            xPos[j] += 2;
         }
     }
     collision_detection_projectile();
@@ -84,7 +84,7 @@ void projectile_update(){
 void send_projectile_info(){
 
     int i;
-    for(i = 0; i<9 ; i++){
+    for(i = 0; i<10 ; i++){
         if(xPos[i] != 0){
             update_frame(xPos[i],yPos[i]);
         }
@@ -93,7 +93,7 @@ void send_projectile_info(){
 
 void remove_projectile_info(){
     int i;
-    for(i = 0; i< 9; i++){
+    for(i = 0; i< 10; i++){
         remove_frame(xPos[i],yPos[i]);
     }
 }

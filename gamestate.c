@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdio.h>
 
 /* Declarations of uint_32 and the like */
                     /* Declarations of system-specific addresses etc */
@@ -13,7 +14,7 @@
 #include "controller.h"
 #include "ground.h"
 #include "monster.h"
-
+#include "projectile.h"
 /* Enables all buttons 
 Written by Eira Birkhammar */
 void enable_buttons()
@@ -121,7 +122,7 @@ void move_left()
     if (player.xPos > 3)
     {
         remove_spaceship();
-        player.xPos = player.xPos - 3;
+        player.xPos = player.xPos - 2;
         insert_spaceship();
     }
 }
@@ -135,7 +136,7 @@ void move_right()
     if (x < 118)
     {
         remove_spaceship();
-        player.xPos = player.xPos + 3;
+        player.xPos = player.xPos + 2;
         insert_spaceship();
     }
 }
@@ -171,16 +172,24 @@ void move_up()
  * then clear screen data and then calls gameinit.
  * Written by Viktor Borg */
 void gameover_routine(){
-    display_string(1,"game over!");
+
+    char string[16];
+    sprintf(string,"%d",get_score());
+    display_string(1,string);
+    display_string(0,"game over,score;");
     display_string(2,"press btn 1 to");
     display_string(3,"play again");
+    delete_frame_data();
     display_update();
     disable_timer2();
+    remove_projectile_info();
     while(!(get_buttons() & 0x1)){}
     remove_ground_info();
     gameinit();
 
 }
+
+
 
 
 

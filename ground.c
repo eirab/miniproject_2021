@@ -9,7 +9,7 @@
 
 #define MIN_Height_Offset 10 //minimum height of mountain.
 #define Default_Height 30
-#define MAX_Height_Offset 25 //maximum height of mountain.
+#define MAX_Height_Offset 20 //maximum height of mountain.
 
 
 

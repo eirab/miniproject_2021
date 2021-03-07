@@ -70,7 +70,12 @@ int frame_taken(int x, int y){
     {
         offset = y / 8;
     }
-    return nextFrame[offset * 128 + x] &= 1 << (y - offset * 8);
+    if((nextFrame[offset * 128 + x] & 1 << (y - offset * 8)) >> (y-offset * 8)){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 /* Displays the current frame of the game 
@@ -108,6 +113,12 @@ void insert_spaceship()
 		nextFrame[(i + (player.xPos) + (page * 128))] = spaceship[i];
 	}
 }
+void delete_frame_data(){
+    int i;
+    for(i = 0; i <512; i++){
+        nextFrame[i] = 0;
+    }
+}
 /* Inserts the monster 
 * Written by Eira Birkhammar */
 void insert_monster()
@@ -118,6 +129,13 @@ void insert_monster()
 	{
 		nextFrame[i + 120] = monster[i];
 	}
+}
+
+void remove_monster(){
+    int i;
+    for (i = 0; i < 8 ; i++) {
+        nextFrame[i + 120] = 0;
+    }
 }
 
 /********** DISPLAY AND SPI CONFIG FUNCTIONS *********/

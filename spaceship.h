@@ -29,4 +29,4 @@ typedef struct Spaceship
 
 
 #endif
- https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
+ //https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
