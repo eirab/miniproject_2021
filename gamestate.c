@@ -29,6 +29,8 @@ void enable_buttons()
     PORTDCLR = 0xE0;
 }
 
+/* Enables switch 1 *7
+/* Written by Viktor Borg */
 void enable_switch1(){
 
     TRISDSET = 0x100;
@@ -81,6 +83,7 @@ void move()
 }
 
 /* Removes the 6 bytes which represent the spaceship */
+/* Written by Eira Birkhammar */
 void remove_spaceship()
 {
 
@@ -94,6 +97,8 @@ void remove_spaceship()
     }
 }
 
+/* Detects horizontal collision */
+/* Written by Eira Birkhammar and Viktor Borg */
 void horizontal_collison()
 {
 
@@ -108,6 +113,8 @@ void horizontal_collison()
     }
 }
 
+/* Moves spaceship left by 3 pixels 
+Written by Eira Birkhammar */
 void move_left()
 {
     int x = (player.xPos + (player.page_pos * 128));
@@ -119,7 +126,8 @@ void move_left()
     }
 }
 
-
+/* Moves spaceship right by 3 pixels 
+Written by Eira Birkhammar */
 void move_right()
 {
     int x = player.xPos;
