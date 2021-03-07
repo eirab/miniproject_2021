@@ -1,8 +1,8 @@
-/* mipslabfunc.c
-   This file written 2015 by F Lundevall
-   Some parts are original code written by Axel Isaksson
-
-   For copyright and licensing, see file COPYING */
+/*--------- display.c - Display related functions -------*/
+/* Mainly written by Fredrik Lundevall, also containing parts
+/* written by Axel Isaksson. 
+/* Added to by Eira Birkhammar and Viktor Borg */
+  
 
 #include <stdint.h> /* Declarations of uint_32 and the like */
 					/* Declarations of system-specific addresses etc */
@@ -38,7 +38,8 @@ void quicksleep(int cyc)
 	for (i = cyc; i > 0; i--)
 		;
 }
-
+/* Updates frame to be displayed next
+Written by Viktor Borg */
 void update_frame(int x, int y)
 {
 
@@ -50,6 +51,8 @@ void update_frame(int x, int y)
 	}
 }
 
+/* Removes frame 
+Written by Viktor Borg */
 void remove_frame(int x, int y)
 {
 	short offset = 0;
@@ -60,6 +63,7 @@ void remove_frame(int x, int y)
 	nextFrame[offset * 128 + x] &= 0 << (y - offset * 8);
 }
 
+/* Written by Viktor Borg */
 int frame_taken(int x, int y){
     short offset = 0;
     if (y > 0)
@@ -69,6 +73,9 @@ int frame_taken(int x, int y){
     return nextFrame[offset * 128 + x] &= 1 << (y - offset * 8);
 }
 
+/* Displays the current frame of the game 
+/* Based on pre-existing code, modified by 
+Eira Birkhammar and Viktor Borg */
 void render_frame()
 {
 	int i, j;
@@ -101,7 +108,8 @@ void insert_spaceship()
 		nextFrame[(i + (player.xPos) + (page * 128))] = spaceship[i];
 	}
 }
-
+/* Inserts the monster 
+* Written by Eira Birkhammar */
 void insert_monster()
 {
 	int i;
@@ -113,7 +121,7 @@ void insert_monster()
 }
 
 /********** DISPLAY AND SPI CONFIG FUNCTIONS *********/
-
+/* PRE-EXISTING CODE */
 void display_update(void)
 {
 	int i, j, k;
@@ -166,14 +174,6 @@ void spi_init(void)
 	SPI2CONSET = 0x8000;
 }
 
-void display_debug(volatile int *const addr)
-{
-	display_string(1, "Addr");
-	display_string(2, "Data");
-	num32asc(&textbuffer[1][6], (int)addr);
-	num32asc(&textbuffer[2][6], *addr);
-	display_update();
-}
 
 //Sends data to OLED byte by byte
 uint8_t spi_send_recv(uint8_t data)
