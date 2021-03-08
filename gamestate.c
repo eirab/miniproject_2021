@@ -123,7 +123,6 @@ void move_left()
     {
         remove_spaceship();
         player.xPos = player.xPos - 2;
-        insert_spaceship();
     }
 }
 
@@ -137,7 +136,7 @@ void move_right()
     {
         remove_spaceship();
         player.xPos = player.xPos + 2;
-        insert_spaceship();
+
     }
 }
 /* Moves spaceship down, unless it's
@@ -150,7 +149,6 @@ void move_down()
     {
         remove_spaceship();
         player.page_pos = player.page_pos + 1;
-        insert_spaceship;
     }
 }
 
@@ -164,7 +162,7 @@ void move_up()
     {
         remove_spaceship();
         player.page_pos = player.page_pos - 1;
-        insert_spaceship();
+
     }
 }
 /* the routine for when the game is over. display to the player that the game is over and to play again
@@ -174,11 +172,11 @@ void move_up()
 void gameover_routine(){
 
     char string[16];
-    sprintf(string,"%d",get_score());
+    sprintf(string,"score: %d",get_score());
     display_string(1,string);
-    display_string(0,"game over,score;");
-    display_string(2,"press btn 1 to");
-    display_string(3,"play again");
+    display_string(0,"GAME OVER!");
+    display_string(2,"Press btn 1 to");
+    display_string(3,"Play again");
     delete_frame_data();
     display_update();
     disable_timer2();

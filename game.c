@@ -30,11 +30,7 @@ void user_isr( void ){
    
     move(); /* Poll buttons */
     if(get_switch1()){
-//<<<<<<< Updated upstream
-        //activate_projectile_player(player.xPos + 7,player.page_pos * 8 + 4); /* Poll switch status */
-//=======
         activate_projectile_player(player.xPos + 8,player.page_pos * 8 + 4);
-//>>>>>>> Stashed changes
     }
     monster_update(); /* Update monster */
     update_ground(); /* Update ground*/

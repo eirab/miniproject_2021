@@ -25,7 +25,7 @@ int main(void) {
 
 	gameinit(); /* Initialise game */
 
-	while( 1 )
+    while( 1 )
 	{
 	  gameloop(); /* Game loop */
 	}
